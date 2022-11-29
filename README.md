@@ -6,3 +6,4 @@ docker
 nextjs
 zustand
 chakra-ui
+react-icons
