@@ -44,11 +44,11 @@ export const QrScanner = ({isOpen, setIsOpen, result, setResult}:Props) => {
             </Box>
           </ModalBody>
           <ModalFooter>
-            <Button onClick={onClose} colorScheme="blue">
+            <Button onClick={onClose} colorScheme="teal">
               OK
             </Button>
             <Button variant="ghost" onClick={onClose}>
-              Chancel
+              キャンセル
             </Button>
           </ModalFooter>
         </ModalContent>
