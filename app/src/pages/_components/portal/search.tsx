@@ -56,7 +56,7 @@ export const SearchBox = () => {
           </DrawerBody>
           <DrawerFooter>
             <Button
-              colorScheme="blue"
+              colorScheme="teal"
               onClick={() => {
                 useSearchHandlers.onClickSearch()
               }}
