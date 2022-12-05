@@ -11,6 +11,7 @@ import {
   SimpleGrid,
 } from '@chakra-ui/react'
 import { IAsset } from 'src/states/types'
+import { useDetail } from 'src/states/useDetail'
 
 type Props = {
   assetList: IAsset[]
@@ -31,6 +32,7 @@ export const PortalCard = ({ assetList }: Props) => {
 }
 
 const CardComponent = ({ asset }: Props2) => {
+  const { useDetailHander } = useDetail()
   return (
     <Card background={'whiteAlpha.700'}>
       <CardHeader background={'gray.800'}>
@@ -48,9 +50,10 @@ const CardComponent = ({ asset }: Props2) => {
       <CardFooter>
         <Button
           variant="solid"
-          colorScheme="blue"
+          colorScheme="teal"
           paddingX={'16'}
           marginX={'auto'}
+          onClick={() => useDetailHander.onChange(asset)}
         >
           詳細画面
         </Button>
@@ -62,7 +65,7 @@ const CardComponent = ({ asset }: Props2) => {
 const statusComponent = (status: string, username: string) => {
   if (status == 'active') {
     return (
-      <Text color="blue.600" fontSize="2xl">
+      <Text color="teal.600" fontSize="2xl">
         貸出可能
       </Text>
     )
