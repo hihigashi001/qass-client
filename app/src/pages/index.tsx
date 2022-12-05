@@ -1,8 +1,12 @@
-import { Heading } from '@chakra-ui/react'
-import { FaBeer } from 'react-icons/fa';
+import { Layout } from 'src/pages/_components/login/layout'
+import { LoginForm } from 'src/pages/_components/login/form'
 
-const Home = () => {
-  return <Heading color="red"><FaBeer />Home</Heading>
+const Login = () => {
+  return (
+    <Layout>
+      <LoginForm />
+    </Layout>
+  )
 }
 
-export default Home
+export default Login
