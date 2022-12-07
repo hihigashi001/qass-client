@@ -1,5 +1,5 @@
 import create from 'zustand'
-import { IAsset, ICategory, IUser } from 'src/states/types'
+import { IAsset, ICategory, IUser } from '@states/types'
 
 type Store = {
   isShowModal: boolean

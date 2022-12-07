@@ -10,28 +10,28 @@ import {
   Button,
   SimpleGrid,
 } from '@chakra-ui/react'
-import { IAsset } from 'src/states/types'
-import { useDetail } from 'src/states/useDetail'
+
+import { IAsset } from '@states/types'
+import { useDetail } from '@states/useDetail'
+import { useAssets } from '@states/useAssets'
 
 type Props = {
-  assetList: IAsset[]
-}
-
-type Props2 = {
   asset: IAsset
 }
 
-export const PortalCard = ({ assetList }: Props) => {
+export const PortalCard = () => {
+  const { searchFilterData } = useAssets()
+
   return (
     <SimpleGrid columns={{ sm: 2, md: 3 }} gap={8} padding={8}>
-      {assetList.map((asset, i) => (
+      {searchFilterData.map((asset, i) => (
         <CardComponent key={i} asset={asset} />
       ))}
     </SimpleGrid>
   )
 }
 
-const CardComponent = ({ asset }: Props2) => {
+const CardComponent = ({ asset }: Props) => {
   const { useDetailHander } = useDetail()
   return (
     <Card background={'whiteAlpha.700'}>

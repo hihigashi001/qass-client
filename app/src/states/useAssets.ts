@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import create from 'zustand'
-import { IAsset } from 'src/states/types'
-import { assetListData } from 'src/states/assetsDammyData'
+
+import { IAsset } from '@states/types'
+import { assetListData } from '@states/assetsDammyData'
 
 type Store = {
   data: IAsset[]

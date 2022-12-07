@@ -17,7 +17,9 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react'
 import { FaSearch } from 'react-icons/fa'
-import { useSearch } from 'src/states/useSearch'
+
+import { useSearch } from '@states/useSearch'
+import { useQrscan } from '@states/useQrscan'
 
 export const SearchBox = () => {
   const { isOpen, useSearchHandlers } = useSearch()
@@ -56,20 +58,20 @@ export const SearchBox = () => {
           </DrawerBody>
           <DrawerFooter>
             <Button
-              colorScheme="teal"
-              onClick={() => {
-                useSearchHandlers.onClickSearch()
-              }}
-            >
-              検索
-            </Button>
-            <Button
               variant="ghost"
               onClick={() => {
                 useSearchHandlers.onClickSearchClear()
               }}
             >
               キャンセル
+            </Button>
+            <Button
+              colorScheme="teal"
+              onClick={() => {
+                useSearchHandlers.onClickSearch()
+              }}
+            >
+              検索
             </Button>
           </DrawerFooter>
         </DrawerContent>
@@ -111,30 +113,50 @@ const StatusSearch = () => {
 
 const AssetSearch = () => {
   const { assetValue, useSearchHandlers } = useSearch()
+  const { useQrscanHandlers } = useQrscan()
+  const onClickHandler = () => {
+    useQrscanHandlers.changeIsOpenModal()
+    useQrscanHandlers.chanageWhichModal('assetValue')
+  }
   return (
     <Flex flexDirection={'column'}>
       <Text fontSize={'lg'}>機器ID:</Text>
-      <Input
-        placeholder="---"
-        name="assetValue"
-        value={assetValue}
-        onChange={(e) => useSearchHandlers.changeInputStatus(e)}
-      />
+      <Flex>
+        <Input
+          placeholder="---"
+          name="assetValue"
+          value={assetValue}
+          onChange={(e) => useSearchHandlers.changeInputStatus(e)}
+        />
+        <Button colorScheme="teal" onClick={onClickHandler}>
+          QR
+        </Button>
+      </Flex>
     </Flex>
   )
 }
 
 const UserSearch = () => {
   const { userValue, useSearchHandlers } = useSearch()
+  const { useQrscanHandlers } = useQrscan()
+  const onClickHandler = () => {
+    useQrscanHandlers.changeIsOpenModal()
+    useQrscanHandlers.chanageWhichModal('userValue')
+  }
   return (
     <Flex flexDirection={'column'}>
       <Text fontSize={'lg'}>利用者名:</Text>
-      <Input
-        placeholder="---"
-        name="userValue"
-        value={userValue}
-        onChange={(e) => useSearchHandlers.changeInputStatus(e)}
-      />
+      <Flex>
+        <Input
+          placeholder="---"
+          name="userValue"
+          value={userValue}
+          onChange={(e) => useSearchHandlers.changeInputStatus(e)}
+        />
+        <Button colorScheme="teal" onClick={onClickHandler}>
+          QR
+        </Button>
+      </Flex>
     </Flex>
   )
 }

@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "semi": false
+  },
   "dependencies": {
     "@chakra-ui/react": "^2.4.1",
     "@emotion/react": "^11.10.5",

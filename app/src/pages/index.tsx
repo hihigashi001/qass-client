@@ -1,5 +1,5 @@
-import { Layout } from 'src/pages/_components/login/layout'
-import { LoginForm } from 'src/pages/_components/login/form'
+import { Layout } from '@components/login/layout'
+import { LoginForm } from '@components/login/form'
 
 const Login = () => {
   return (

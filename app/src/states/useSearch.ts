@@ -1,5 +1,5 @@
 import create from 'zustand'
-import { useAssets } from 'src/states/useAssets'
+import { useAssets } from '@states/useAssets'
 
 type Store = {
   statusValue: string
@@ -11,6 +11,7 @@ type Handlers = {
   changeIsOpen: () => void
   changeSelectStatus: (event: React.ChangeEvent<HTMLSelectElement>) => void
   changeInputStatus: (event: React.ChangeEvent<HTMLInputElement>) => void
+  changeQrscanStatus: (value: string, which: "assetValue" | "userValue") => void
   onClickSearch: () => void
   onClickSearchClear: () => void
 }
@@ -36,6 +37,9 @@ export const useSearch = () => {
     },
     changeInputStatus: (e) => {
       statusStore.setState({ [e.target.name]: e.target.value })
+    },
+    changeQrscanStatus: (value, which) => {
+      statusStore.setState({ [which]: value })
     },
     onClickSearch: () => {
       const statusFilterData = statusValue

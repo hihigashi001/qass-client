@@ -1,4 +1,4 @@
-import { useLogin } from 'src/states/useLogin'
+import { useLogin } from '@states/useLogin'
 import {
   Heading,
   Input,

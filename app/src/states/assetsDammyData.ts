@@ -1,4 +1,4 @@
-import { IAsset, IUser, ICategory } from 'src/states/types'
+import { IAsset, IUser, ICategory } from '@states/types'
 
 const user1: IUser = {
   id: "001",
