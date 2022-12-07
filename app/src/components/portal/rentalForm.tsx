@@ -1,13 +1,8 @@
 import {
-  Box,
   Button,
   Text,
   Flex,
-  Select,
   SimpleGrid,
-  Input,
-  InputGroup,
-  InputLeftElement,
   Drawer,
   DrawerBody,
   DrawerHeader,
@@ -25,18 +20,13 @@ export const RentalForm = () => {
 
   return (
     <>
-      <Box
-        position={'fixed'}
-        zIndex={5}
-        top={'4'}
-        right={'4'}
-        onClick={() => {useReantalFormHandlers.changeIsOpen()}}
+      <Drawer
+        isOpen={isOpen}
+        placement="top"
+        onClose={() => {
+          useReantalFormHandlers.changeIsOpen()
+        }}
       >
-        <Button colorScheme={'whiteAlpha.900'}>
-          <FaPlusCircle size={'40'} color="teal" />
-        </Button>
-      </Box>
-      <Drawer isOpen={isOpen} placement="top" onClose={() => {useReantalFormHandlers.changeIsOpen()}}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />

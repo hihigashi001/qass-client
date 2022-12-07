@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react'
 
 import { useDetail } from '@states/useDetail'
+import { statusToString } from '@lib/functions'
 
 export const Detail = () => {
   const { isShowModal, detailData, useDetailHander } = useDetail()
@@ -72,10 +73,4 @@ export const Detail = () => {
       </Modal>
     </>
   )
-}
-
-const statusToString = (value: string) => {
-  if (value == 'active') return '貸出可能'
-  if (value == 'inActive') return '貸出中'
-  return '故障中'
 }

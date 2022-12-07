@@ -8,31 +8,19 @@ import {
   Text,
   Divider,
   Button,
-  SimpleGrid,
 } from '@chakra-ui/react'
 
 import { IAsset } from '@states/types'
 import { useDetail } from '@states/useDetail'
-import { useAssets } from '@states/useAssets'
+import { statusComponent } from './statusComponent'
 
 type Props = {
   asset: IAsset
 }
 
-export const PortalCard = () => {
-  const { searchFilterData } = useAssets()
-
-  return (
-    <SimpleGrid columns={{ sm: 2, md: 3 }} gap={8} padding={8}>
-      {searchFilterData.map((asset, i) => (
-        <CardComponent key={i} asset={asset} />
-      ))}
-    </SimpleGrid>
-  )
-}
-
-const CardComponent = ({ asset }: Props) => {
+export const CardComponent = ({ asset }: Props) => {
   const { useDetailHander } = useDetail()
+
   return (
     <Card background={'whiteAlpha.700'}>
       <CardHeader background={'gray.800'}>
@@ -60,26 +48,4 @@ const CardComponent = ({ asset }: Props) => {
       </CardFooter>
     </Card>
   )
-}
-
-const statusComponent = (status: string, username: string) => {
-  if (status == 'active') {
-    return (
-      <Text color="teal.600" fontSize="2xl">
-        貸出可能
-      </Text>
-    )
-  } else if (status == 'inActive') {
-    return (
-      <Text color="red.600" fontSize="2xl">
-        貸出中: {username}
-      </Text>
-    )
-  } else {
-    return (
-      <Text color="red.600" fontSize="2xl">
-        故障中
-      </Text>
-    )
-  }
 }
