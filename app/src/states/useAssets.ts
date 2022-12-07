@@ -1,45 +1,15 @@
-import { useEffect } from 'react'
-import create from 'zustand'
-
+import useSWR, { Fetcher } from 'swr'
 import { IAsset } from '@states/types'
-import { assetListData } from 'src/pages/api/assetsDammyData'
 
-type Store = {
-  data: IAsset[]
-  searchFilterData: IAsset[]
-  isLoading: boolean
-  error: string | undefined
-}
-type Handlers = {
-  changeSearchFilterData: (value: IAsset[]) => void
-}
-
-const initialState: Store = {
-  data: [],
-  searchFilterData: [],
-  isLoading: false,
-  error: undefined,
-}
-const assetStore = create<Store>(() => initialState)
+const fetcher: Fetcher<IAsset[]> = (url: string) =>
+  fetch(url).then((res) => res.json())
 
 export const useAssets = () => {
-  const { data, searchFilterData, isLoading, error } = assetStore()
-  useEffect(() => {
-    assetStore.setState({ isLoading: true })
-    assetStore.setState({ data: assetListData, searchFilterData: assetListData })
-    assetStore.setState({ isLoading: false })
-  }, [data])
-  const useAssetsHandlers: Handlers = {
-    changeSearchFilterData: (value) => {
-      assetStore.setState({ searchFilterData: value})
-    }
-  }
+  const { data, error } = useSWR('http://localhost:3000/api/assets', fetcher)
 
   return {
     data,
-    searchFilterData,
-    isLoading,
     error,
-    useAssetsHandlers
+    isLoading: !error && !data
   }
 }
