@@ -6,7 +6,6 @@ import {
   InputGroup,
   Stack,
   InputLeftElement,
-  chakra,
   Box,
   Avatar,
   FormControl,
@@ -14,8 +13,6 @@ import {
 } from '@chakra-ui/react'
 import { FaUserAlt, FaLock } from 'react-icons/fa'
 
-const CFaUserAlt = chakra(FaUserAlt)
-const CFaLock = chakra(FaLock)
 
 export const LoginForm = () => {
   const { username, password, showPassword, useLoginHandlers } = useLogin()
@@ -33,7 +30,7 @@ export const LoginForm = () => {
             <FormControl>
               <InputGroup>
                 <InputLeftElement pointerEvents="none">
-                  <CFaUserAlt color="gray.300" />
+                  <FaUserAlt color="teal" />
                 </InputLeftElement>
                 <Input
                   type="text"
@@ -47,7 +44,7 @@ export const LoginForm = () => {
             <FormControl marginTop="4">
               <InputGroup>
                 <InputLeftElement pointerEvents="none">
-                  <CFaLock color="gray.300" />
+                  <FaLock color="teal" />
                 </InputLeftElement>
                 <Input
                   type={showPassword ? 'text' : 'password'}
