@@ -35,7 +35,7 @@ export const QrScanner = () => {
           <ModalHeader>QR Scan</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <AspectRatio>
+            <AspectRatio maxW="300px" ratio={4 / 3} marginX={'auto'}>
               <video ref={ref} />
             </AspectRatio>
             <Text>【Result】</Text>
