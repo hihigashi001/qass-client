@@ -1,4 +1,3 @@
-import { useZxing } from 'react-zxing'
 import {
   Modal,
   ModalOverlay,
@@ -14,14 +13,10 @@ import {
 } from '@chakra-ui/react'
 
 import { useQrscan } from '@states/useQrscan'
+import { QrCodeReader } from '@ui/QrCodeReader'
 
 export const QrScanner = () => {
   const { isOpenModal, resultData, useQrscanHandlers } = useQrscan()
-  const { ref } = useZxing({
-    onResult(result) {
-      useQrscanHandlers.changeResultData(result.getText())
-    },
-  })
 
   return (
     <>
@@ -35,8 +30,17 @@ export const QrScanner = () => {
           <ModalHeader>QR Scan</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <AspectRatio maxW="250px" ratio={4 / 3} marginX={'auto'}>
-              <video ref={ref} />
+            <AspectRatio
+              maxW="250px"
+              ratio={4 / 3}
+              marginX={'auto'}
+              marginBottom={'2'}
+            >
+              <QrCodeReader
+                onReadQRCode={(result) => {
+                  useQrscanHandlers.changeResultData(result.getText())
+                }}
+              />
             </AspectRatio>
             <Text>【Result】</Text>
             <Box padding={'4'} backgroundColor={'gray.500'} rounded={'10'}>
