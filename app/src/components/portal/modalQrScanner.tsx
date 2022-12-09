@@ -10,6 +10,7 @@ import {
   Button,
   Text,
   Box,
+  AspectRatio,
 } from '@chakra-ui/react'
 
 import { useQrscan } from '@states/useQrscan'
@@ -34,7 +35,9 @@ export const QrScanner = () => {
           <ModalHeader>QR Scan</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <video ref={ref} />
+            <AspectRatio>
+              <video ref={ref} />
+            </AspectRatio>
             <Text>【Result】</Text>
             <Box padding={'4'} backgroundColor={'gray.500'} rounded={'10'}>
               <Text color={'white'}>{resultData}</Text>
