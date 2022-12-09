@@ -47,7 +47,7 @@ export const RentalForm = () => {
               <Button
                 variant="ghost"
                 onClick={() => {
-                  // useSearchHandlers.onClickSearchClear()
+                  useReantalFormHandlers.changeIsOpen()
                 }}
               >
                 キャンセル
