@@ -33,14 +33,15 @@ export const useQrscan = () => {
       statusStore.setState(initialState)
     },
     changeResultData: (value) => {
-      statusStore.setState({ resultData: value })
+      useSearchHandlers.changeQrscanStatus(value, whichModal)
+      statusStore.setState(initialState)
     },
     chanageWhichModal: (value) => {
       statusStore.setState({ whichModal: value })
     },
     onClickSubmit: () => {
-      statusStore.setState(initialState)
       useSearchHandlers.changeQrscanStatus(resultData, whichModal)
+      statusStore.setState(initialState)
     },
   }
 
