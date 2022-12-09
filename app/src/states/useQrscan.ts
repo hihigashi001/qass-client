@@ -26,7 +26,7 @@ export const useQrscan = () => {
 
   const useQrscanHandlers: Handlers = {
     changeIsOpenModal: () => {
-      statusStore.setState({ isOpenModal: !isOpenModal })
+      statusStore.setState(initialState)
     },
     changeResultData: (value) => {
       statusStore.setState({ resultData: value })
@@ -35,8 +35,8 @@ export const useQrscan = () => {
       statusStore.setState({ whichModal: value })
     },
     onClickSubmit: () => {
-      statusStore.setState({ isOpenModal: !isOpenModal })
       useSearchHandlers.changeQrscanStatus(resultData, whichModal)
+      statusStore.setState(initialState)
     },
   }
 

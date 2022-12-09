@@ -13,7 +13,6 @@ export const QrCodeReader: FC<{ onReadQRCode: (text: Result) => void }> = ({
       return
     }
     const codeReader = new BrowserQRCodeReader(undefined, undefined)
-    console.log(codeReader)
     codeReader.decodeFromVideoDevice(
       undefined,
       videoRef.current,
