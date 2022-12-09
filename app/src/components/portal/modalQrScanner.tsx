@@ -39,6 +39,7 @@ export const QrScanner = () => {
               <QrCodeReader
                 onReadQRCode={(result) => {
                   useQrscanHandlers.changeResultData(result.getText())
+                  useQrscanHandlers.onClickSubmit()
                 }}
               />
             </AspectRatio>
