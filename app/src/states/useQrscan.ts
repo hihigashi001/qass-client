@@ -7,7 +7,8 @@ type Store = {
   whichModal: 'assetValue' | 'userValue'
 }
 type Handlers = {
-  changeIsOpenModal: () => void
+  changeOpenModal: () => void
+  changeCloseModal: () => void
   changeResultData: (value: string) => void
   chanageWhichModal: (value: 'assetValue' | 'userValue') => void
   onClickSubmit: () => void
@@ -25,7 +26,10 @@ export const useQrscan = () => {
   const { useSearchHandlers } = useSearch()
 
   const useQrscanHandlers: Handlers = {
-    changeIsOpenModal: () => {
+    changeOpenModal: () => {
+      statusStore.setState({ isOpenModal: true })
+    },
+    changeCloseModal: () => {
       statusStore.setState(initialState)
     },
     changeResultData: (value) => {
@@ -35,8 +39,8 @@ export const useQrscan = () => {
       statusStore.setState({ whichModal: value })
     },
     onClickSubmit: () => {
-      useSearchHandlers.changeQrscanStatus(resultData, whichModal)
       statusStore.setState(initialState)
+      useSearchHandlers.changeQrscanStatus(resultData, whichModal)
     },
   }
 

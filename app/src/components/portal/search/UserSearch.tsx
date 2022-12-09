@@ -7,7 +7,7 @@ export const UserSearch = () => {
   const { userValue, useSearchHandlers } = useSearch()
   const { useQrscanHandlers } = useQrscan()
   const onClickHandler = () => {
-    useQrscanHandlers.changeIsOpenModal()
+    useQrscanHandlers.changeOpenModal()
     useQrscanHandlers.chanageWhichModal('userValue')
   }
   return (

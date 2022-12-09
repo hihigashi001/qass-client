@@ -21,7 +21,7 @@ export const QrScanner = () => {
   return (
     <>
       <Modal
-        onClose={() => useQrscanHandlers.changeIsOpenModal()}
+        onClose={() => useQrscanHandlers.changeCloseModal()}
         size={'sm'}
         isOpen={isOpenModal}
       >
@@ -51,7 +51,7 @@ export const QrScanner = () => {
           <ModalFooter>
             <Button
               variant="ghost"
-              onClick={() => useQrscanHandlers.changeIsOpenModal()}
+              onClick={() => useQrscanHandlers.changeCloseModal()}
             >
               キャンセル
             </Button>

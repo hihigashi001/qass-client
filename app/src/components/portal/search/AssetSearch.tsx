@@ -7,7 +7,7 @@ export const AssetSearch = () => {
   const { assetValue, useSearchHandlers } = useSearch()
   const { useQrscanHandlers } = useQrscan()
   const onClickHandler = () => {
-    useQrscanHandlers.changeIsOpenModal()
+    useQrscanHandlers.changeOpenModal()
     useQrscanHandlers.chanageWhichModal('assetValue')
   }
   return (
