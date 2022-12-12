@@ -1,5 +1,5 @@
 import create from 'zustand'
-import { IAsset, ICategory, IUser } from '@states/types'
+import { IAsset, IProduct, IUser } from '@states/types'
 
 type Store = {
   isShowModal: boolean
@@ -10,7 +10,7 @@ type Handlers = {
   changeShowModal: () => void
 }
 
-const InitCategory: ICategory = {
+const InitProduct: IProduct = {
   id: '',
   imagePath: '',
   name: '',
@@ -18,13 +18,14 @@ const InitCategory: ICategory = {
   model: '',
   accessories: [],
   note: '',
+  category: '',
 }
 const InitUser: IUser = {
   id: '',
   qrImagePath: '',
   department: '',
   name: '',
-  status: '',
+  status: 'suspended',
   password: '',
 }
 const initialState: Store = {
@@ -34,10 +35,10 @@ const initialState: Store = {
     qrImagePath: '',
     simId: '',
     note: '',
-    categoryId: InitCategory,
+    productId: InitProduct,
     userId: InitUser,
     buyDate: '',
-    status: '',
+    status: 'maintenance',
   },
 }
 

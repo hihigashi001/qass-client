@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import create from 'zustand'
 import { useAssets } from '@states/useAssets'
+import { IAsset } from '@states/types'
 
 type Store = {
   isOpen: boolean
@@ -13,7 +14,7 @@ export type Handers = {
   changeInputStatus: (event: React.ChangeEvent<HTMLInputElement>) => void
   changeQrscanStatus: (value: string, which: 'assetValue' | 'userValue') => void
   onClickClear: () => void
-  onClickSubmit: (status: 'broken' | 'active' | 'inActive') => void
+  onClickSubmit: (status: IAsset['status']) => void
 }
 
 const initialState: Store = {
@@ -33,9 +34,9 @@ export const useRentalForm = () => {
       const statusJudge = assetValue
         ? data.find((x) => x.id == assetValue)
         : undefined
-      statusJudge 
-       ? statusStore.setState({ status: statusJudge.status })
-       : statusStore.setState({ status: '' })
+      statusJudge
+        ? statusStore.setState({ status: statusJudge.status })
+        : statusStore.setState({ status: '' })
     }
   }, [assetValue])
 

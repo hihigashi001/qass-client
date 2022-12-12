@@ -6,7 +6,6 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button,
   Text,
   SimpleGrid,
   Divider,
@@ -43,14 +42,16 @@ export const Detail = () => {
             </SimpleGrid>
             <Divider />
             <SimpleGrid columns={2} spacing={2}>
-              <Text>カテゴリ名</Text>
-              <Text>{detailData.categoryId.name}</Text>
+              <Text>製品名</Text>
+              <Text>{detailData.productId.name}</Text>
               <Text>メーカー</Text>
-              <Text>{detailData.categoryId.maker}</Text>
+              <Text>{detailData.productId.maker}</Text>
               <Text>型番</Text>
-              <Text>{detailData.categoryId.model}</Text>
+              <Text>{detailData.productId.model}</Text>
               <Text>付属品</Text>
-              <Text>{detailData.categoryId.accessories}</Text>
+              <Text>{detailData.productId.accessories}</Text>
+              <Text>カテゴリ</Text>
+              <Text>{detailData.productId.category}</Text>
             </SimpleGrid>
             <Divider />
             <SimpleGrid columns={2} spacing={2}>

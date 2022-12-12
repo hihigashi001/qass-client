@@ -30,7 +30,7 @@ export const CardComponent = ({ asset }: Props) => {
       </CardHeader>
       <CardBody>
         <Stack spacing="3">
-          <Text>{asset.categoryId.model}</Text>
+          <Text>{asset.productId.model}</Text>
           <StatusComponent status={asset.status} username={asset.userId.name} />
         </Stack>
       </CardBody>
