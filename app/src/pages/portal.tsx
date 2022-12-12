@@ -4,6 +4,7 @@ import { SearchBox } from '@components/portal/search'
 import { RentalForm } from '@components/portal/rentalForm'
 import { Detail } from '@components/portal/modalDetail'
 import { QrScannerSearch } from '@components/portal/search/modalQrScanner'
+import { QrScannerRentalForm } from '@components/portal/rentalForm/modalQrScanner'
 import { PortalCard } from '@components/portal/card'
 
 const Portal = () => {
@@ -14,6 +15,7 @@ const Portal = () => {
       <RentalForm />
       <Detail />
       <QrScannerSearch />
+      <QrScannerRentalForm />
       <PortalCard />
     </Layout>
   )
