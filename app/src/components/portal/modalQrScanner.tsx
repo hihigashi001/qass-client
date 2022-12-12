@@ -16,7 +16,7 @@ import { useQrscan } from '@states/useQrscan'
 import { QrCodeReader } from '@ui/QrCodeReader'
 
 export const QrScanner = () => {
-  const { isOpenModal, resultData, useQrscanHandlers, ref } = useQrscan()
+  const { isOpenModal, resultData, useQrscanHandlers } = useQrscan()
 
   return (
     <>
@@ -36,7 +36,7 @@ export const QrScanner = () => {
               marginX={'auto'}
               marginBottom={'2'}
             >
-              <QrCodeReader videoRef={ref} />
+              <QrCodeReader useQrscanHandlers={useQrscanHandlers} />
             </AspectRatio>
             <Text>【Result】</Text>
             <Box padding={'4'} backgroundColor={'gray.500'} rounded={'10'}>

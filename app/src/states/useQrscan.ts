@@ -1,6 +1,5 @@
 import create from 'zustand'
 import { useSearch } from '@states/useSearch'
-import { useZxing } from "react-zxing";
 
 type Store = {
   isOpenModal: boolean
@@ -26,12 +25,6 @@ export const useQrscan = () => {
   const { isOpenModal, resultData, whichModal } = statusStore()
   const { useSearchHandlers } = useSearch()
 
-  const { ref } = useZxing({
-    onResult(result) {
-      useQrscanHandlers.changeResultData(result.getText())
-    },
-  });
-
   const useQrscanHandlers: Handlers = {
     changeOpenModal: () => {
       statusStore.setState({ isOpenModal: true })
@@ -52,5 +45,5 @@ export const useQrscan = () => {
     },
   }
 
-  return { isOpenModal, resultData, whichModal, useQrscanHandlers, ref }
+  return { isOpenModal, resultData, whichModal, useQrscanHandlers }
 }
