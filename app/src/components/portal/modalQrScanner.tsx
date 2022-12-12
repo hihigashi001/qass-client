@@ -36,7 +36,9 @@ export const QrScanner = () => {
               marginX={'auto'}
               marginBottom={'2'}
             >
-              <QrCodeReader useQrscanHandlers={useQrscanHandlers} />
+              <QrCodeReader
+                changeResultData={useQrscanHandlers.changeResultData}
+              />
             </AspectRatio>
             <Text>【Result】</Text>
             <Box padding={'4'} backgroundColor={'gray.500'} rounded={'10'}>

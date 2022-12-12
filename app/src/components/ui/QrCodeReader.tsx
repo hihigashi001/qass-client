@@ -1,14 +1,13 @@
 import { useZxing } from 'react-zxing'
 
-
 type Props = {
-  useQrscanHandlers: any
+  changeResultData: (value: string) => void
 }
 
-export const QrCodeReader = ({ useQrscanHandlers }: Props) => {
+export const QrCodeReader = ({ changeResultData }: Props) => {
   const { ref } = useZxing({
     onResult(result) {
-      useQrscanHandlers.changeResultData(result.getText())
+      changeResultData(result.getText())
     },
   })
 
