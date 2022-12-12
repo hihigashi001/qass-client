@@ -51,7 +51,7 @@ export const SearchBox = () => {
                 useSearchHandlers.onClickSearchClear()
               }}
             >
-              キャンセル
+              クリア
             </Button>
             <Button
               colorScheme="teal"

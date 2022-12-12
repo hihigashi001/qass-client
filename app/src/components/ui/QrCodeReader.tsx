@@ -1,10 +1,12 @@
-import { useRef, useEffect, FC } from 'react'
+import { useRef, useEffect } from 'react'
 import { BrowserQRCodeReader, IScannerControls } from '@zxing/browser'
 import { Result } from '@zxing/library'
 
-export const QrCodeReader: FC<{ onReadQRCode: (text: Result) => void }> = ({
-  onReadQRCode,
-}) => {
+type Props = {
+  onReadQRCode: (text: Result) => void
+}
+
+export const QrCodeReader = ({ onReadQRCode }: Props) => {
   const controlsRef = useRef<IScannerControls | null>()
   const videoRef = useRef<HTMLVideoElement>(null)
 

@@ -12,7 +12,7 @@ import {
 
 import { IAsset } from '@states/types'
 import { useDetail } from '@states/useDetail'
-import { statusComponent } from './statusComponent'
+import { StatusComponent } from '@components/portal/card/statusComponent'
 
 type Props = {
   asset: IAsset
@@ -31,7 +31,7 @@ export const CardComponent = ({ asset }: Props) => {
       <CardBody>
         <Stack spacing="3">
           <Text>{asset.categoryId.model}</Text>
-          {statusComponent(asset.status, asset.userId.name)}
+          <StatusComponent status={asset.status} username={asset.userId.name} />
         </Stack>
       </CardBody>
       <Divider />

@@ -1,6 +1,11 @@
 import { Text } from '@chakra-ui/react'
 
-export const statusComponent = (status: string, username: string) => {
+type Props = {
+  status: string
+  username: string
+}
+
+export const StatusComponent = ({ status, username }: Props) => {
   if (status == 'active') {
     return (
       <Text color="teal.600" fontSize="2xl">

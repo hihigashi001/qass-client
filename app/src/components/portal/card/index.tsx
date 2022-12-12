@@ -12,7 +12,7 @@ export const PortalCard = () => {
   if (isLoading) return <Spinner />
 
   return (
-    <SimpleGrid columns={{ sm: 2, md: 3 }} gap={8} padding={8}>
+    <SimpleGrid columns={{ sm: 2, md: 3 }} gap={4} padding={4}>
       {filterData.map((asset, i) => (
         <CardComponent key={i} asset={asset} />
       ))}
