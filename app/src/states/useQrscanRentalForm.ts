@@ -1,5 +1,5 @@
 import create from 'zustand'
-import { useSearch } from '@states/useSearch'
+import { useRentalForm } from '@states/useRentalForm'
 
 type Store = {
   isOpenModal: boolean
@@ -21,9 +21,9 @@ const initialState: Store = {
 }
 const statusStore = create<Store>(() => initialState)
 
-export const useQrscan = () => {
+export const useQrscanRentalForm = () => {
   const { isOpenModal, resultData, whichModal } = statusStore()
-  const { useSearchHandlers } = useSearch()
+  const { useRentalFormHandlers } = useRentalForm()
 
   const useQrscanHandlers: Handlers = {
     changeOpenModal: () => {
@@ -33,14 +33,14 @@ export const useQrscan = () => {
       statusStore.setState(initialState)
     },
     changeResultData: (value) => {
-      useSearchHandlers.changeQrscanStatus(value, whichModal)
+      useRentalFormHandlers.changeQrscanStatus(value, whichModal)
       statusStore.setState(initialState)
     },
     chanageWhichModal: (value) => {
       statusStore.setState({ whichModal: value })
     },
     onClickSubmit: () => {
-      useSearchHandlers.changeQrscanStatus(resultData, whichModal)
+      useRentalFormHandlers.changeQrscanStatus(resultData, whichModal)
       statusStore.setState(initialState)
     },
   }

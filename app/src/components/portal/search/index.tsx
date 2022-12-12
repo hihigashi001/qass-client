@@ -14,9 +14,9 @@ import {
 import { FaSearch } from 'react-icons/fa'
 
 import { useSearch } from '@states/useSearch'
-import { StatusSearch } from './StatusSearch'
-import { AssetSearch } from './AssetSearch'
-import { UserSearch } from './UserSearch'
+import { StatusSearch } from '@components/portal/search/StatusSearch'
+import { AssetSearch } from '@components/portal/search/AssetSearch'
+import { UserSearch } from '@components/portal/search/UserSearch'
 
 export const SearchBox = () => {
   const { isOpen, useSearchHandlers } = useSearch()

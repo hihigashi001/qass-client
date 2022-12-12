@@ -14,7 +14,7 @@ import { useRentalForm } from '@states/useRentalForm'
 
 export const Header = () => {
   const { useSearchHandlers } = useSearch()
-  const { useReantalFormHandlers } = useRentalForm()
+  const { useRentalFormHandlers } = useRentalForm()
 
   return (
     <Box
@@ -40,7 +40,7 @@ export const Header = () => {
         </Box>
         <Button
           onClick={() => {
-            useReantalFormHandlers.changeIsOpen()
+            useRentalFormHandlers.changeIsOpen()
           }}
           colorScheme={'whiteAlpha.900'}
         >

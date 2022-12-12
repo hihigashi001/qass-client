@@ -12,11 +12,11 @@ import {
   AspectRatio,
 } from '@chakra-ui/react'
 
-import { useQrscan } from '@states/useQrscan'
+import { useQrscanSearch } from '@states/useQrscanSearch'
 import { QrCodeReader } from '@ui/QrCodeReader'
 
-export const QrScanner = () => {
-  const { isOpenModal, resultData, useQrscanHandlers } = useQrscan()
+export const QrScannerSearch = () => {
+  const { isOpenModal, resultData, useQrscanHandlers } = useQrscanSearch()
 
   return (
     <>
@@ -50,7 +50,7 @@ export const QrScanner = () => {
               variant="ghost"
               onClick={() => useQrscanHandlers.changeCloseModal()}
             >
-              キャンセル
+              戻る
             </Button>
             <Button
               onClick={() => useQrscanHandlers.onClickSubmit()}

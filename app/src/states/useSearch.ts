@@ -70,6 +70,7 @@ export const useSearch = () => {
     },
     onClickSearchClear: () => {
       statusStore.setState(initialState)
+      statusStore.setState({ isOpen: true })
       statusStore.setState({ filterData: data })
     },
   }

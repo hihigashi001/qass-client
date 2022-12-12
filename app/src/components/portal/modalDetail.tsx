@@ -61,14 +61,7 @@ export const Detail = () => {
             </SimpleGrid>
             <Divider />
           </ModalBody>
-          <ModalFooter>
-            <Button
-              variant="ghost"
-              onClick={() => useDetailHander.changeShowModal()}
-            >
-              キャンセル
-            </Button>
-          </ModalFooter>
+          <ModalFooter></ModalFooter>
         </ModalContent>
       </Modal>
     </>

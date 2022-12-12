@@ -14,9 +14,11 @@ import {
 import { FaPlusCircle } from 'react-icons/fa'
 
 import { useRentalForm } from '@states/useRentalForm'
+import { AssetInput } from '@components/portal/rentalForm/AssetInput'
+import { UserInput } from '@components/portal/rentalForm/UserInput'
 
 export const RentalForm = () => {
-  const { isOpen, useReantalFormHandlers } = useRentalForm()
+  const { isOpen, useRentalFormHandlers } = useRentalForm()
 
   return (
     <>
@@ -24,7 +26,7 @@ export const RentalForm = () => {
         isOpen={isOpen}
         placement="top"
         onClose={() => {
-          useReantalFormHandlers.changeIsOpen()
+          useRentalFormHandlers.changeIsOpen()
         }}
       >
         <DrawerOverlay />
@@ -38,8 +40,8 @@ export const RentalForm = () => {
           </DrawerHeader>
           <DrawerBody>
             <SimpleGrid columns={{ sm: 3 }} gap={8} padding={8}>
-              {/* <AssetSearch />
-              <UserSearch /> */}
+              <AssetInput />
+              <UserInput />
             </SimpleGrid>
           </DrawerBody>
           <DrawerFooter>
@@ -47,15 +49,15 @@ export const RentalForm = () => {
               <Button
                 variant="ghost"
                 onClick={() => {
-                  useReantalFormHandlers.changeIsOpen()
+                  useRentalFormHandlers.onClickClear()
                 }}
               >
-                キャンセル
+                クリア
               </Button>
               <Button
                 colorScheme="red"
                 onClick={() => {
-                  // useSearchHandlers.onClickSearch()
+                  useRentalFormHandlers.onClickClear()
                 }}
               >
                 故障

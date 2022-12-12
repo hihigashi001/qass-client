@@ -3,7 +3,7 @@ import { SimpleGrid } from '@chakra-ui/react'
 import { useSearch } from '@states/useSearch'
 import { useAssets } from '@states/useAssets'
 import { Spinner } from '@ui/Spinner'
-import { CardComponent } from './cardComponent'
+import { CardComponent } from '@components/portal/card/cardComponent'
 
 export const PortalCard = () => {
   const { filterData } = useSearch()
