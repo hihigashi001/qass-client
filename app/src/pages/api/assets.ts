@@ -24,7 +24,6 @@ function runMiddleware(
 }
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<IAsset[]>) => {
-  // await new Promise((resolve) => setTimeout(resolve, 3000))
   await runMiddleware(req, res, cors)
   res.status(200).json(assetListData)
 }
