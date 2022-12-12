@@ -34,3 +34,7 @@ git
 2. docker-compose build
 3. docker-compose run --rm nextjs sh -c 'cd app && npm install'
 4. docker-compose up
+
+## vercel deply memo
+
+NEXT_PUBLIC_BACKEND_URL : API 　 router 同一ドメインのみ？
