@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import create from 'zustand'
 import { useAssets } from '@states/useAssets'
-import { IAsset } from '@states/types'
+import { IAsset } from 'src/types'
 
 type Store = {
   isOpen: boolean

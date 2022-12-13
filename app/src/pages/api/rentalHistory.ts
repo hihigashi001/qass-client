@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { IAsset } from 'src/types'
-import { assetListData } from './assetsDammyData'
+import { IRentalHistory } from 'src/types'
+import { rentalHistoryDammyData } from './rentalHistoryDammyData'
 import Cors from 'cors'
 
 const cors = Cors({
@@ -23,9 +23,9 @@ function runMiddleware(
   })
 }
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<IAsset[]>) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse<IRentalHistory[]>) => {
   await runMiddleware(req, res, cors)
-  res.status(200).json(assetListData)
+  res.status(200).json(rentalHistoryDammyData)
 }
 
 export default handler

@@ -2,14 +2,14 @@ import { SimpleGrid } from '@chakra-ui/react'
 
 import { useSearch } from '@states/useSearch'
 import { useAssets } from '@states/useAssets'
-import { Spinner } from '@ui/Spinner'
+import { Loading } from '@ui/Loading'
 import { CardComponent } from '@components/portal/card/cardComponent'
 
 export const PortalCard = () => {
   const { filterData } = useSearch()
   const { isLoading } = useAssets()
 
-  if (isLoading) return <Spinner />
+  if (isLoading) return <Loading />
 
   return (
     <SimpleGrid columns={{ sm: 2, md: 3 }} gap={4} padding={4}>

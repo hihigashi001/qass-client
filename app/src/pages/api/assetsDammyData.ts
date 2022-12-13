@@ -1,45 +1,44 @@
-import { IAsset, IUser, IProduct } from '@states/types'
+import { IAsset, IUser, IProduct } from 'src/types'
 
 const user1: IUser = {
-  id: "001",
-  qrImagePath: "user/001",
-  department: "システムグループ",
-  name: "井本達也",
-  status: "enrolled",
-  password: "001",
+  id: '001',
+  qrImagePath: 'user/001',
+  department: 'システムグループ',
+  name: '井本達也',
+  status: 'enrolled',
+  password: '001',
 }
 
 const user2: IUser = {
-  id: "002",
-  qrImagePath: "user/002",
-  department: "営業部",
-  name: "山田淳一",
-  status: "enrolled",
-  password: "001",
+  id: '002',
+  qrImagePath: 'user/002',
+  department: '営業部',
+  name: '山田淳一',
+  status: 'enrolled',
+  password: '001',
 }
 
 const product1: IProduct = {
-  id: "001",
-  imagePath: "asset/001",
-  name: "横河レンタルノートPC-01",
-  maker: "Dell",
-  model: "del-00001",
-  accessories: ["電源ケーブル", "マウス"],
-  note: "井本さん結婚1周年記念のパソコン",
-  category: "mobilePhone",
+  id: '001',
+  imagePath: 'asset/001',
+  name: '横河レンタルノートPC-01',
+  maker: 'Dell',
+  model: 'del-00001',
+  accessories: ['電源ケーブル', 'マウス'],
+  note: '井本さん結婚1周年記念のパソコン',
+  category: 'mobilePhone',
 }
 
 const product2: IProduct = {
-  id: "002",
-  imagePath: "asset/002",
-  name: "横河レンタルノートPC-02",
-  maker: "Dell",
-  model: "del-00002",
-  accessories: ["電源ケーブル", "マウス"],
-  note: "",
-  category: "mobilePhone",
+  id: '002',
+  imagePath: 'asset/002',
+  name: '横河レンタルノートPC-02',
+  maker: 'Dell',
+  model: 'del-00002',
+  accessories: ['電源ケーブル', 'マウス'],
+  note: '',
+  category: 'mobilePhone',
 }
-
 
 export const assetListData: IAsset[] = [
   {
@@ -241,5 +240,5 @@ export const assetListData: IAsset[] = [
     productId: product1,
     userId: user2,
     status: 'active',
-  }
+  },
 ]

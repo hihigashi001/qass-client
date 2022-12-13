@@ -30,11 +30,14 @@ export interface IAsset {
 }
 
 export interface IRentalHistory {
+  id: string
   userId: string
   assetId: string
   date: string
   status: AssetStatus
 }
 
-type AssetStatus = 'broken' | 'active' | 'inActive' | 'maintenance'
-type UserStatus = 'enrolled' | 'retired' | 'suspended'
+
+
+export type AssetStatus = 'broken' | 'active' | 'inActive' | 'maintenance'
+export type UserStatus = 'enrolled' | 'retired' | 'suspended'

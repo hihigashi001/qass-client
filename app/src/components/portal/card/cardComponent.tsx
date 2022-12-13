@@ -10,7 +10,7 @@ import {
   Button,
 } from '@chakra-ui/react'
 
-import { IAsset } from '@states/types'
+import { IAsset } from 'src/types'
 import { useDetail } from '@states/useDetail'
 import { StatusComponent } from '@components/portal/card/statusComponent'
 
