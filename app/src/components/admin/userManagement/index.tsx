@@ -39,11 +39,13 @@ export const UserManagement = () => {
   if (isLoading) return <Loading />
   if (!data) return <Loading />
 
+  const test: IUser[] = []
+
   return (
     <Box padding={'4'}>
       <Text fontSize={'3xl'}>ユーザ管理</Text>
       <FilterHeader />
-      <CustomTable columns={columns} data={data} />
+      <CustomTable columns={columns} data={test} />
     </Box>
   )
 }
