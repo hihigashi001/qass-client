@@ -39,6 +39,8 @@ export const UserManagement = () => {
   if (isLoading) return <Loading />
   if (filterData == undefined ) return <Loading />
 
+  console.log(filterData)
+
   return (
     <Box padding={'4'}>
       <Text fontSize={'3xl'}>ユーザ管理</Text>
