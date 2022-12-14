@@ -33,19 +33,16 @@ const columns = [
 ]
 
 export const UserManagement = () => {
-  const { isLoading, data } = useUsers()
-  // const { filterData } = useUsersFilter()
+  const { isLoading } = useUsers()
+  const { filterData } = useUsersFilter()
 
   if (isLoading) return <Loading />
-  if (!data) return <Loading />
-
-  const test: IUser[] = []
 
   return (
     <Box padding={'4'}>
       <Text fontSize={'3xl'}>ユーザ管理</Text>
       <FilterHeader />
-      <CustomTable columns={columns} data={test} />
+      <CustomTable columns={columns} data={filterData} />
     </Box>
   )
 }
