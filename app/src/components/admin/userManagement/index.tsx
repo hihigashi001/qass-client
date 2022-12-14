@@ -37,6 +37,7 @@ export const UserManagement = () => {
   const { filterData } = useUsersFilter()
 
   if (isLoading) return <Loading />
+  if (filterData == undefined ) return <Loading />
 
   return (
     <Box padding={'4'}>

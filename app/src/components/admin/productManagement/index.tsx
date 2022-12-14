@@ -41,6 +41,7 @@ export const ProductManagement = () => {
   const { filterData } = useProductsFilter()
 
   if (isLoading) return <Loading />
+  if (filterData == undefined ) return <Loading />
 
   return (
     <Box padding={'4'}>

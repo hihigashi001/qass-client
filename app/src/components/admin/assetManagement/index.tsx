@@ -43,6 +43,7 @@ export const AssetManagement = () => {
   const { filterData } = useAssetsFilter()
 
   if (isLoading) return <Loading />
+  if (filterData == undefined ) return <Loading />
 
   return (
     <Box padding={'4'}>
