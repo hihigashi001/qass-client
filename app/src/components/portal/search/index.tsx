@@ -12,8 +12,7 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react'
 import { FaSearch } from 'react-icons/fa'
-
-import { useSearch } from '@states/useSearch'
+import { useSearch } from '@states/zustand/portal/useSearch'
 import { StatusSearch } from '@components/portal/search/StatusSearch'
 import { AssetSearch } from '@components/portal/search/AssetSearch'
 import { UserSearch } from '@components/portal/search/UserSearch'

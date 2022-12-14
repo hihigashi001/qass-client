@@ -10,9 +10,8 @@ import {
   SimpleGrid,
   Divider,
 } from '@chakra-ui/react'
-
-import { useDetail } from '@states/useDetail'
-import { statusToString } from '@lib/functions'
+import { useDetail } from '@states/zustand/portal/useDetail'
+import { statusToJapanese } from '@lib/functions'
 
 export const Detail = () => {
   const { isShowModal, detailData, useDetailHander } = useDetail()
@@ -32,7 +31,7 @@ export const Detail = () => {
             <Divider />
             <SimpleGrid columns={2} spacing={2}>
               <Text>ステータス</Text>
-              <Text>{statusToString(detailData.status)}</Text>
+              <Text>{statusToJapanese(detailData.status)}</Text>
               <Text>SIM</Text>
               <Text>{detailData.simId}</Text>
               <Text>購入日</Text>

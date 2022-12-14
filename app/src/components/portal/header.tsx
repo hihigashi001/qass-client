@@ -8,9 +8,8 @@ import {
 } from '@chakra-ui/react'
 import { FaSearch, FaPlusCircle } from 'react-icons/fa'
 import { FilterValueHeader } from '@components/portal/search/filterValueHeader'
-
-import { useSearch } from '@states/useSearch'
-import { useRentalForm } from '@states/useRentalForm'
+import { useSearch } from '@states/zustand/portal/useSearch'
+import { useRentalForm } from '@states/zustand/portal/useRentalForm'
 
 export const Header = () => {
   const { useSearchHandlers } = useSearch()

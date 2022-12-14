@@ -1,16 +1,56 @@
-import { Flex, Select, Input, Button } from '@chakra-ui/react'
+import { Flex, Input, Button } from '@chakra-ui/react'
+import { useRentalHistoryFilter } from '@states/zustand/admin/useRentalHistoryFilter'
+import { SelectStatus } from '@ui/SelectStatus'
 
 export const FilterHeader = () => {
+  const {
+    userValue,
+    assetValue,
+    statusValue,
+    dateValue,
+    useRentalHistoryFilterHandlers,
+  } = useRentalHistoryFilter()
   return (
-    <Flex gap={'4'} padding={'4'}>
+    <Flex gap={'4'} paddingY={'4'}>
       <Flex justifyItems={'center'} alignItems={'center'}>
         Filter:
       </Flex>
-      <Input placeholder="ユーザID 検索" />
-      <Input placeholder="備品ID 検索" />
-      <Select placeholder="ステータス  検索"></Select>
-      <Input placeholder="日付  検索" />
-      <Button colorScheme="teal">実行</Button>
+      <Input
+        name="userValue"
+        placeholder="ユーザID 検索"
+        value={userValue}
+        onChange={(e) => useRentalHistoryFilterHandlers.changeInputStatus(e)}
+      />
+      <Input
+        name="assetValue"
+        placeholder="備品ID 検索"
+        value={assetValue}
+        onChange={(e) => useRentalHistoryFilterHandlers.changeInputStatus(e)}
+      />
+      <SelectStatus
+        placeholder="ステータス  検索"
+        value={statusValue}
+        onChange={useRentalHistoryFilterHandlers.changeSelectStatus}
+        which="asset"
+      />
+      <Input
+        name="dateValue"
+        placeholder="日付  検索"
+        value={dateValue}
+        onChange={(e) => useRentalHistoryFilterHandlers.changeInputStatus(e)}
+      />
+      <Button
+        colorScheme="teal"
+        onClick={() => useRentalHistoryFilterHandlers.onClickFilter()}
+      >
+        実行
+      </Button>
+      <Button
+        colorScheme="gray"
+        onClick={() => useRentalHistoryFilterHandlers.onClickClear()}
+      >
+        消
+      </Button>
     </Flex>
   )
 }

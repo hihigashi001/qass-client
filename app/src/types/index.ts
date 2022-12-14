@@ -3,7 +3,7 @@ export interface IUser {
   qrImagePath: string
   department: string
   name: string
-  status: UserStatus
+  status: IUserStatus
   password: string
 }
 
@@ -26,7 +26,7 @@ export interface IAsset {
   productId: IProduct
   userId: IUser
   buyDate: string
-  status: AssetStatus
+  status: IAssetStatus
 }
 
 export interface IRentalHistory {
@@ -34,10 +34,10 @@ export interface IRentalHistory {
   userId: string
   assetId: string
   date: string
-  status: AssetStatus
+  status: IAssetStatus
 }
 
 
 
-export type AssetStatus = 'broken' | 'active' | 'inActive' | 'maintenance'
-export type UserStatus = 'enrolled' | 'retired' | 'suspended'
+export type IAssetStatus = 'broken' | 'active' | 'inActive' | 'maintenance'
+export type IUserStatus = 'enrolled' | 'retired' | 'suspended'

@@ -10,10 +10,10 @@ export const rentalHistoryDammyData: IRentalHistory[] = [
   },
   {
     id: '2',
-    userId: '19438902',
-    assetId: 'pc0001',
-    status: 'active',
-    date: '2022/10/21',
+    userId: '19438903',
+    assetId: 'pc0002',
+    status: 'inActive',
+    date: '2022/10/22',
   },
   {
     id: '3',

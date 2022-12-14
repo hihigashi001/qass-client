@@ -40,6 +40,10 @@ const product2: IProduct = {
   category: 'mobilePhone',
 }
 
+export const userData: IUser[] = [user1, user2]
+
+export const productData: IProduct[] = [product1, product2]
+
 export const assetListData: IAsset[] = [
   {
     id: 'test001',

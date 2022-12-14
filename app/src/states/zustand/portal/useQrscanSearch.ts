@@ -1,5 +1,5 @@
 import create from 'zustand'
-import { useSearch } from '@states/useSearch'
+import { useSearch } from '@states/zustand/portal/useSearch'
 
 type Store = {
   isOpenModal: boolean

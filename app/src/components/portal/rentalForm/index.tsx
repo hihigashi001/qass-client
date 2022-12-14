@@ -11,12 +11,11 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react'
 import { FaPlusCircle } from 'react-icons/fa'
-
-import { useRentalForm } from '@states/useRentalForm'
+import { useRentalForm } from '@states/zustand/portal/useRentalForm'
 import { AssetInput } from '@components/portal/rentalForm/AssetInput'
 import { UserInput } from '@components/portal/rentalForm/UserInput'
 import { FooterButtons } from '@components/portal/rentalForm/FooterButtons'
-import { statusToString } from '@lib/functions'
+import { statusToJapanese } from '@lib/functions'
 
 export const RentalForm = () => {
   const { isOpen, status, useRentalFormHandlers } = useRentalForm()
@@ -43,7 +42,7 @@ export const RentalForm = () => {
             <SimpleGrid columns={{ sm: 3 }} gap={8} padding={8}>
               <AssetInput />
               <UserInput />
-              <Text fontSize={'4xl'}>{statusToString(status)}</Text>
+              <Text fontSize={'4xl'}>{statusToJapanese(status)}</Text>
             </SimpleGrid>
           </DrawerBody>
           <DrawerFooter>

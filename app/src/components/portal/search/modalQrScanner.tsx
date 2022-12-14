@@ -11,8 +11,7 @@ import {
   Box,
   AspectRatio,
 } from '@chakra-ui/react'
-
-import { useQrscanSearch } from '@states/useQrscanSearch'
+import { useQrscanSearch } from '@states/zustand/portal/useQrscanSearch'
 import { QrCodeReader } from '@ui/QrCodeReader'
 
 export const QrScannerSearch = () => {

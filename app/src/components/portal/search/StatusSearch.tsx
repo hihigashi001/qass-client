@@ -1,23 +1,18 @@
-import { Text, Flex, Select } from '@chakra-ui/react'
-
-import { useSearch } from '@states/useSearch'
+import { Text, Flex } from '@chakra-ui/react'
+import { SelectStatus } from '@ui/SelectStatus'
+import { useSearch } from '@states/zustand/portal/useSearch'
 
 export const StatusSearch = () => {
   const { statusValue, useSearchHandlers } = useSearch()
   return (
     <Flex flexDirection={'column'}>
       <Text fontSize={'lg'}>ステータス:</Text>
-      <Select
+      <SelectStatus
         placeholder="---"
         value={statusValue}
-        onChange={(e) => {
-          useSearchHandlers.changeSelectStatus(e)
-        }}
-      >
-        <option value="inActive">貸出中</option>
-        <option value="active">貸出可能</option>
-        <option value="broken">故障中</option>
-      </Select>
+        onChange={useSearchHandlers.changeSelectStatus}
+        which="asset"
+      />
     </Flex>
   )
 }

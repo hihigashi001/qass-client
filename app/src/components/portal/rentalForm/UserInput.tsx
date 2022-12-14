@@ -1,7 +1,6 @@
 import { Button, Text, Flex, Input } from '@chakra-ui/react'
-
-import { useRentalForm } from '@states/useRentalForm'
-import { useQrscanRentalForm } from '@states/useQrscanRentalForm'
+import { useRentalForm } from '@states/zustand/portal/useRentalForm'
+import { useQrscanRentalForm } from '@states/zustand/portal/useQrscanRentalForm'
 
 export const UserInput = () => {
   const { userValue, useRentalFormHandlers } = useRentalForm()

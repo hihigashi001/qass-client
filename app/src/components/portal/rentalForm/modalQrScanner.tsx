@@ -11,8 +11,7 @@ import {
   Box,
   AspectRatio,
 } from '@chakra-ui/react'
-
-import { useQrscanRentalForm } from '@states/useQrscanRentalForm'
+import { useQrscanRentalForm } from '@states/zustand/portal/useQrscanRentalForm'
 import { QrCodeReader } from '@ui/QrCodeReader'
 
 export const QrScannerRentalForm = () => {

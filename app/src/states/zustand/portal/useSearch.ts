@@ -1,5 +1,5 @@
 import create from 'zustand'
-import { useAssets } from '@states/useAssets'
+import { useAssets } from '@states/swr/useAssets'
 import { IAsset } from 'src/types'
 import { useEffect } from 'react'
 

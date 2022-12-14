@@ -1,7 +1,6 @@
 import { SimpleGrid } from '@chakra-ui/react'
-
-import { useSearch } from '@states/useSearch'
-import { useAssets } from '@states/useAssets'
+import { useSearch } from '@states/zustand/portal/useSearch'
+import { useAssets } from '@states/swr/useAssets'
 import { Loading } from '@ui/Loading'
 import { CardComponent } from '@components/portal/card/cardComponent'
 

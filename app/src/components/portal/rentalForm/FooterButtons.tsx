@@ -1,5 +1,5 @@
 import { Button, Flex } from '@chakra-ui/react'
-import { Handers } from '@states/useRentalForm'
+import { Handers } from '@states/zustand/portal/useRentalForm'
 
 type Props = {
   status: string

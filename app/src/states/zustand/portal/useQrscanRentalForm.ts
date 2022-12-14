@@ -1,5 +1,5 @@
 import create from 'zustand'
-import { useRentalForm } from '@states/useRentalForm'
+import { useRentalForm } from '@states/zustand/portal/useRentalForm'
 
 type Store = {
   isOpenModal: boolean

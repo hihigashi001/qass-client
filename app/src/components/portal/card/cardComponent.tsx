@@ -9,9 +9,8 @@ import {
   Divider,
   Button,
 } from '@chakra-ui/react'
-
 import { IAsset } from 'src/types'
-import { useDetail } from '@states/useDetail'
+import { useDetail } from '@states/zustand/portal/useDetail'
 import { StatusComponent } from '@components/portal/card/statusComponent'
 
 type Props = {

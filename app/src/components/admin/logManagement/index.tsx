@@ -1,12 +1,12 @@
-import { Box } from '@chakra-ui/react'
-import { useRentalHistory } from '@states/useRentalHistory'
+import { Box, Text } from '@chakra-ui/react'
+import { createColumnHelper } from '@tanstack/react-table'
+import { useRentalHistory } from '@states/swr/useRentalHistory'
+import { useRentalHistoryFilter } from '@states/zustand/admin/useRentalHistoryFilter'
 import { CustomTable } from '@ui/CustomTable'
 import { Loading } from '@ui/Loading'
-import { statusToString } from '@lib/functions'
+import { statusToJapanese } from '@lib/functions'
 import { IRentalHistory } from 'src/types'
-
 import { FilterHeader } from './filterHeader'
-import { createColumnHelper } from '@tanstack/react-table'
 
 const columnHelper = createColumnHelper<IRentalHistory>()
 
@@ -22,7 +22,7 @@ const columns = [
   }),
   columnHelper.accessor('status', {
     header: 'ステータス',
-    cell: (props) => statusToString(props.getValue()),
+    cell: (props) => statusToJapanese(props.getValue()),
   }),
   columnHelper.accessor('date', {
     header: '日付',
@@ -30,15 +30,16 @@ const columns = [
 ]
 
 export const LogManagement = () => {
-  const { data, isLoading } = useRentalHistory()
+  const { isLoading } = useRentalHistory()
+  const { filterData } = useRentalHistoryFilter()
 
   if (isLoading) return <Loading />
-  if (!data) return <Box padding={'4'}>データがありません。</Box>
 
   return (
     <Box padding={'4'}>
+      <Text fontSize={'3xl'}>貸出履歴</Text>
       <FilterHeader />
-      <CustomTable columns={columns} data={data} />
+      <CustomTable columns={columns} data={filterData} />
     </Box>
   )
 }

@@ -19,8 +19,7 @@ const Admin = () => {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <LogManagement />
-            {/* <UserManagement /> */}
+            <UserManagement />
           </TabPanel>
           <TabPanel>
             <AssetManagement />
