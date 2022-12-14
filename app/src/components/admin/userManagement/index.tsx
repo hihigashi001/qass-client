@@ -37,16 +37,13 @@ export const UserManagement = () => {
   const { filterData } = useUsersFilter()
 
   if (isLoading) return <Loading />
-  if (filterData == undefined) return <Loading />
-
-  console.log(isLoading)
-  console.log(filterData)
+  if (filterData == undefined || filterData.length == 0 ) return <Loading />
 
   return (
     <Box padding={'4'}>
       <Text fontSize={'3xl'}>ユーザ管理</Text>
       <FilterHeader />
-      {/* <CustomTable columns={columns} data={filterData} /> */}
+      <CustomTable columns={columns} data={filterData} />
     </Box>
   )
 }
