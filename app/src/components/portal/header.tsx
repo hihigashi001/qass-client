@@ -10,10 +10,24 @@ import { FaSearch, FaPlusCircle } from 'react-icons/fa'
 import { FilterValueHeader } from '@components/portal/search/filterValueHeader'
 import { useSearch } from '@states/zustand/portal/useSearch'
 import { useRentalForm } from '@states/zustand/portal/useRentalForm'
+import { HeaderMenu } from '@components/ui/HeaderMenu'
+import { useRouter } from '@hooks/useRouter'
 
 export const Header = () => {
   const { useSearchHandlers } = useSearch()
   const { useRentalFormHandlers } = useRentalForm()
+  const { onClickAdminPage, onClickloginPage } = useRouter()
+
+  const menuData = [
+    {
+      name: 'adminPage',
+      function: onClickAdminPage,
+    },
+    {
+      name: 'sginOut',
+      function: onClickloginPage,
+    },
+  ]
 
   return (
     <Box
@@ -37,14 +51,17 @@ export const Header = () => {
             />
           </InputGroup>
         </Box>
-        <Button
-          onClick={() => {
-            useRentalFormHandlers.changeIsOpen()
-          }}
-          colorScheme={'whiteAlpha.900'}
-        >
-          <FaPlusCircle size={'40'} color="teal" />
-        </Button>
+        <Flex gap={'2'}>
+          <Button
+            onClick={() => {
+              useRentalFormHandlers.changeIsOpen()
+            }}
+            colorScheme={'whiteAlpha.900'}
+          >
+            <FaPlusCircle size={'40'} color="teal" />
+          </Button>
+          <HeaderMenu menus={menuData} />
+        </Flex>
       </Flex>
       <FilterValueHeader />
     </Box>
