@@ -1,4 +1,4 @@
-export interface IUser {
+export type IUser = {
   id: string
   qrImagePath: string
   department: string
@@ -7,7 +7,7 @@ export interface IUser {
   password: string
 }
 
-export interface IProduct {
+export type IProduct = {
   id: string
   imagePath: string
   name: string
@@ -18,7 +18,7 @@ export interface IProduct {
   category: string
 }
 
-export interface IAsset {
+export type IAsset = {
   id: string
   qrImagePath: string
   simId: string
@@ -29,15 +29,13 @@ export interface IAsset {
   status: IAssetStatus
 }
 
-export interface IRentalHistory {
+export type IRentalHistory = {
   id: string
   userId: string
   assetId: string
   date: string
   status: IAssetStatus
 }
-
-
 
 export type IAssetStatus = 'broken' | 'active' | 'inActive' | 'maintenance'
 export type IUserStatus = 'enrolled' | 'retired' | 'suspended'
