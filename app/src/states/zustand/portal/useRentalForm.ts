@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import create from 'zustand'
 import { useAssets } from '@states/swr/useAssets'
-import { IAsset } from 'src/types'
+import { AssetType } from 'src/types'
 
 type Store = {
   isOpen: boolean
@@ -14,7 +14,7 @@ export type Handers = {
   changeInputStatus: (event: React.ChangeEvent<HTMLInputElement>) => void
   changeQrscanStatus: (value: string, which: 'assetValue' | 'userValue') => void
   onClickClear: () => void
-  onClickSubmit: (status: IAsset['status']) => void
+  onClickSubmit: (status: AssetType['status']) => void
 }
 
 const initialState: Store = {

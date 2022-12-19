@@ -5,10 +5,10 @@ import { useUsersFilter } from '@states/zustand/admin/useUsersFilter'
 import { CustomTable } from '@ui/CustomTable'
 import { Loading } from '@ui/Loading'
 import { userStatusToJapanese } from '@lib/functions'
-import { IUser } from 'src/types'
+import { UserType } from 'src/types'
 import { FilterHeader } from './filterHeader'
 
-const columnHelper = createColumnHelper<IUser>()
+const columnHelper = createColumnHelper<UserType>()
 
 const columns = [
   columnHelper.accessor('id', {

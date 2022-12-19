@@ -1,10 +1,10 @@
 import create from 'zustand'
 import { useEffect } from 'react'
-import { IAsset } from 'src/types'
+import { AssetType } from 'src/types'
 import { useAssets } from '@states/swr/useAssets'
 
 type Store = {
-  filterData: IAsset[]
+  filterData: AssetType[]
   idValue: string
   qrImagePathValue: string
   simIdValue: string

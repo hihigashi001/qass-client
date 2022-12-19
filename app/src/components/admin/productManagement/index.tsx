@@ -4,10 +4,10 @@ import { useProducts } from '@states/swr/useProducts'
 import { useProductsFilter } from '@states/zustand/admin/useProductsFilter'
 import { CustomTable } from '@ui/CustomTable'
 import { Loading } from '@ui/Loading'
-import { IProduct } from 'src/types'
+import { ProductType } from 'src/types'
 import { FilterHeader } from './filterHeader'
 
-const columnHelper = createColumnHelper<IProduct>()
+const columnHelper = createColumnHelper<ProductType>()
 
 const columns = [
   columnHelper.accessor('id', {
@@ -41,7 +41,7 @@ export const ProductManagement = () => {
   const { filterData } = useProductsFilter()
 
   if (isLoading) return <Loading />
-  if (filterData == undefined ) return <Loading />
+  if (filterData == undefined) return <Loading />
 
   return (
     <Box padding={'4'}>

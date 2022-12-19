@@ -5,10 +5,10 @@ import { useRentalHistoryFilter } from '@states/zustand/admin/useRentalHistoryFi
 import { CustomTable } from '@ui/CustomTable'
 import { Loading } from '@ui/Loading'
 import { statusToJapanese } from '@lib/functions'
-import { IRentalHistory } from 'src/types'
+import { RentalHistoryType } from 'src/types'
 import { FilterHeader } from './filterHeader'
 
-const columnHelper = createColumnHelper<IRentalHistory>()
+const columnHelper = createColumnHelper<RentalHistoryType>()
 
 const columns = [
   columnHelper.accessor('id', {
@@ -34,7 +34,7 @@ export const LogManagement = () => {
   const { filterData } = useRentalHistoryFilter()
 
   if (isLoading) return <Loading />
-  if (filterData == undefined ) return <Loading />
+  if (filterData == undefined) return <Loading />
 
   return (
     <Box padding={'4'}>

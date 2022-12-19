@@ -1,16 +1,16 @@
 import create from 'zustand'
-import { IAsset, IProduct, IUser } from 'src/types'
+import { AssetType, ProductType, UserType } from 'src/types'
 
 type Store = {
   isShowModal: boolean
-  detailData: IAsset
+  detailData: AssetType
 }
 type Handlers = {
-  onChange: (obj: IAsset) => void
+  onChange: (obj: AssetType) => void
   changeShowModal: () => void
 }
 
-const InitProduct: IProduct = {
+const InitProduct: ProductType = {
   id: '',
   imagePath: '',
   name: '',
@@ -20,7 +20,7 @@ const InitProduct: IProduct = {
   note: '',
   category: '',
 }
-const InitUser: IUser = {
+const InitUser: UserType = {
   id: '',
   qrImagePath: '',
   department: '',

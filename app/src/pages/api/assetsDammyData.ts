@@ -1,6 +1,6 @@
-import { IAsset, IUser, IProduct } from 'src/types'
+import { AssetType, UserType, ProductType } from 'src/types'
 
-const user1: IUser = {
+const user1: UserType = {
   id: '001',
   qrImagePath: 'user/001',
   department: 'システムグループ',
@@ -9,7 +9,7 @@ const user1: IUser = {
   password: '001',
 }
 
-const user2: IUser = {
+const user2: UserType = {
   id: '002',
   qrImagePath: 'user/002',
   department: '営業部',
@@ -18,7 +18,7 @@ const user2: IUser = {
   password: '001',
 }
 
-const product1: IProduct = {
+const product1: ProductType = {
   id: '001',
   imagePath: 'asset/001',
   name: '横河レンタルノートPC-01',
@@ -29,7 +29,7 @@ const product1: IProduct = {
   category: 'mobilePhone',
 }
 
-const product2: IProduct = {
+const product2: ProductType = {
   id: '002',
   imagePath: 'asset/002',
   name: '横河レンタルノートPC-02',
@@ -40,11 +40,11 @@ const product2: IProduct = {
   category: 'mobilePhone',
 }
 
-export const userData: IUser[] = [user1, user2]
+export const userData: UserType[] = [user1, user2]
 
-export const productData: IProduct[] = [product1, product2]
+export const productData: ProductType[] = [product1, product2]
 
-export const assetListData: IAsset[] = [
+export const assetListData: AssetType[] = [
   {
     id: 'test001',
     qrImagePath: 'list/test001',

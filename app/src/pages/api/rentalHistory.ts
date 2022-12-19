@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { IRentalHistory } from 'src/types'
+import { RentalHistoryType } from 'src/types'
 import { rentalHistoryDammyData } from './rentalHistoryDammyData'
 import Cors from 'cors'
 
@@ -23,7 +23,10 @@ function runMiddleware(
   })
 }
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<IRentalHistory[]>) => {
+const handler = async (
+  req: NextApiRequest,
+  res: NextApiResponse<RentalHistoryType[]>
+) => {
   await runMiddleware(req, res, cors)
   res.status(200).json(rentalHistoryDammyData)
 }

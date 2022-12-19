@@ -4,11 +4,11 @@ import { useAssetsFilter } from '@states/zustand/admin/useAssetsFilter'
 import { CustomTable } from '@ui/CustomTable'
 import { Loading } from '@ui/Loading'
 import { statusToJapanese } from '@lib/functions'
-import { IAsset } from 'src/types'
+import { AssetType } from 'src/types'
 import { FilterHeader } from './filterHeader'
 import { createColumnHelper } from '@tanstack/react-table'
 
-const columnHelper = createColumnHelper<IAsset>()
+const columnHelper = createColumnHelper<AssetType>()
 
 const columns = [
   columnHelper.accessor('id', {
@@ -43,7 +43,7 @@ export const AssetManagement = () => {
   const { filterData } = useAssetsFilter()
 
   if (isLoading) return <Loading />
-  if (filterData == undefined ) return <Loading />
+  if (filterData == undefined) return <Loading />
 
   return (
     <Box padding={'4'}>

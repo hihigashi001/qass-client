@@ -9,12 +9,12 @@ import {
   Divider,
   Button,
 } from '@chakra-ui/react'
-import { IAsset } from 'src/types'
+import { AssetType } from 'src/types'
 import { useDetail } from '@states/zustand/portal/useDetail'
 import { StatusComponent } from '@components/portal/card/statusComponent'
 
 type Props = {
-  asset: IAsset
+  asset: AssetType
 }
 
 export const CardComponent = ({ asset }: Props) => {

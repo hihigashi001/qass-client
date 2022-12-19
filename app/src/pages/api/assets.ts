@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { IAsset } from 'src/types'
+import { AssetType } from 'src/types'
 import { assetListData } from './assetsDammyData'
 import Cors from 'cors'
 
@@ -23,7 +23,10 @@ function runMiddleware(
   })
 }
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<IAsset[]>) => {
+const handler = async (
+  req: NextApiRequest,
+  res: NextApiResponse<AssetType[]>
+) => {
   await runMiddleware(req, res, cors)
   res.status(200).json(assetListData)
 }

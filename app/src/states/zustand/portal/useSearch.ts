@@ -1,10 +1,10 @@
 import create from 'zustand'
 import { useAssets } from '@states/swr/useAssets'
-import { IAsset } from 'src/types'
+import { AssetType } from 'src/types'
 import { useEffect } from 'react'
 
 type Store = {
-  filterData: IAsset[]
+  filterData: AssetType[]
   statusValue: string
   assetValue: string
   userValue: string

@@ -1,13 +1,13 @@
-export type IUser = {
+export type UserType = {
   id: string
   qrImagePath: string
   department: string
   name: string
-  status: IUserStatus
+  status: UserStatusType
   password: string
 }
 
-export type IProduct = {
+export type ProductType = {
   id: string
   imagePath: string
   name: string
@@ -18,24 +18,24 @@ export type IProduct = {
   category: string
 }
 
-export type IAsset = {
+export type AssetType = {
   id: string
   qrImagePath: string
   simId: string
   note: string
-  productId: IProduct
-  userId: IUser
+  productId: ProductType
+  userId: UserType
   buyDate: string
-  status: IAssetStatus
+  status: AssetStatusType
 }
 
-export type IRentalHistory = {
+export type RentalHistoryType = {
   id: string
   userId: string
   assetId: string
   date: string
-  status: IAssetStatus
+  status: AssetStatusType
 }
 
-export type IAssetStatus = 'broken' | 'active' | 'inActive' | 'maintenance'
-export type IUserStatus = 'enrolled' | 'retired' | 'suspended'
+export type AssetStatusType = 'broken' | 'active' | 'inActive' | 'maintenance'
+export type UserStatusType = 'enrolled' | 'retired' | 'suspended'

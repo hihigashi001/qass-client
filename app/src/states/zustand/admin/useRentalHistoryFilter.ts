@@ -1,10 +1,10 @@
 import create from 'zustand'
 import { useEffect } from 'react'
-import { IRentalHistory } from 'src/types'
+import { RentalHistoryType } from 'src/types'
 import { useRentalHistory } from '@states/swr/useRentalHistory'
 
 type Store = {
-  filterData: IRentalHistory[]
+  filterData: RentalHistoryType[]
   userValue: string
   assetValue: string
   statusValue: string

@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { IProduct } from 'src/types'
+import { ProductType } from 'src/types'
 import { productData } from './assetsDammyData'
 import Cors from 'cors'
 
@@ -25,7 +25,7 @@ function runMiddleware(
 
 const handler = async (
   req: NextApiRequest,
-  res: NextApiResponse<IProduct[]>
+  res: NextApiResponse<ProductType[]>
 ) => {
   await runMiddleware(req, res, cors)
   res.status(200).json(productData)

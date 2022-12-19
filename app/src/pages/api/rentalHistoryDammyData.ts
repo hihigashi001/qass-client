@@ -1,6 +1,6 @@
-import { IRentalHistory } from 'src/types'
+import { RentalHistoryType } from 'src/types'
 
-export const rentalHistoryDammyData: IRentalHistory[] = [
+export const rentalHistoryDammyData: RentalHistoryType[] = [
   {
     id: '1',
     userId: '19438902',

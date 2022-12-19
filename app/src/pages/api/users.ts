@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { IUser } from 'src/types'
+import { UserType } from 'src/types'
 import { userData } from './assetsDammyData'
 import Cors from 'cors'
 
@@ -23,7 +23,10 @@ function runMiddleware(
   })
 }
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<IUser[]>) => {
+const handler = async (
+  req: NextApiRequest,
+  res: NextApiResponse<UserType[]>
+) => {
   await runMiddleware(req, res, cors)
   res.status(200).json(userData)
 }

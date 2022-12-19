@@ -1,10 +1,10 @@
 import create from 'zustand'
 import { useEffect } from 'react'
-import { IProduct } from 'src/types'
+import { ProductType } from 'src/types'
 import { useProducts } from '@states/swr/useProducts'
 
 type Store = {
-  filterData: IProduct[]
+  filterData: ProductType[]
   idValue: string
   nameValue: string
   modelValue: string

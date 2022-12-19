@@ -1,9 +1,9 @@
 import useSWR, { Fetcher } from 'swr'
-import { IUser } from 'src/types'
+import { UserType } from 'src/types'
 
 const apiUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}/users`
 
-const fetcher: Fetcher<IUser[]> = (url: string) =>
+const fetcher: Fetcher<UserType[]> = (url: string) =>
   fetch(url).then((res) => res.json())
 
 export const useUsers = () => {

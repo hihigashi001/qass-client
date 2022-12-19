@@ -1,9 +1,9 @@
 import useSWR, { Fetcher } from 'swr'
-import { IAsset } from 'src/types'
+import { AssetType } from 'src/types'
 
 const apiUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}/assets`
 
-const fetcher: Fetcher<IAsset[]> = (url: string) =>
+const fetcher: Fetcher<AssetType[]> = (url: string) =>
   fetch(url).then((res) => res.json())
 
 export const useAssets = () => {

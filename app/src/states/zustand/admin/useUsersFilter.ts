@@ -1,10 +1,10 @@
 import create from 'zustand'
 import { useEffect } from 'react'
-import { IUser } from 'src/types'
+import { UserType } from 'src/types'
 import { useUsers } from '@states/swr/useUsers'
 
 type Store = {
-  filterData: IUser[]
+  filterData: UserType[]
   idValue: string
   departmentValue: string
   nameValue: string
